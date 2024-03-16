@@ -1,0 +1,29 @@
+package com.userRegistartion.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.userRegistartion.entity.User;
+import com.userRegistartion.reposatry.UserReposatry;
+
+@Service
+public class UserRegistartionService {
+
+	@Autowired
+	private UserReposatry userReposatry;
+
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+	public Boolean registerUser(User user) {
+		if (userReposatry.existsByEmail(user.getEmail())) {
+			return false;
+		}
+		String hashedPassword = passwordEncoder.encode(user.getPassword());
+		user.setPassword(hashedPassword);
+		userReposatry.save(user);
+		return true;
+	}
+
+}

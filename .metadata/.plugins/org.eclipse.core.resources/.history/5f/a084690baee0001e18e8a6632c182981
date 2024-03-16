@@ -1,0 +1,5 @@
+package com.userRegistartion.reposatry;
+
+public interface UserReposatry {
+
+}

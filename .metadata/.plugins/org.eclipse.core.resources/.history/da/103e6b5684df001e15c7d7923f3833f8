@@ -1,0 +1,5 @@
+package com.studentRecord.Reposatry;
+
+public interface StudentReosatry {
+
+}

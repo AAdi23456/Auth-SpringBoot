@@ -1,0 +1,32 @@
+package springResttt.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import springResttt.model.User;
+import springResttt.service.RegistrationService;
+
+@Controller
+@RequestMapping("/reg")
+public class HomeCintroller {
+	private final RegistrationService registrationService;
+
+	public HomeCintroller(RegistrationService registrationService) {
+		super();
+		this.registrationService = registrationService;
+	}
+
+	@PostMapping
+	public String registerUser(@RequestBody User user) {
+		System.out.println(user);
+		return "User registered: " + user.getUserName() + ", " + user.getEmail();
+	}
+	@GetMapping("/test")
+	public String test() {
+		System.out.println("hey its running");
+		return "hello";
+	}
+}

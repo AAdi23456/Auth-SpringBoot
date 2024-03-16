@@ -1,0 +1,26 @@
+package com.studentRecord.Service;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
+import org.hibernate.sql.ast.tree.expression.Collation;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.studentRecord.Entity.Student;
+import com.studentRecord.Reposatry.StudentReosatry;
+
+public class StudentService {
+	@Autowired
+	private final StudentReosatry studentReosatry;
+
+	public List<Student> getAllStudents(int id) {
+		if (id!=(Integer) null) {
+			Optional<Student> studentOptional= studentReosatry.findById(id);
+			 return studentOptional.map(Collections::singletonList).orElse(Collections.emptyList());)
+		}else {
+			return studentReosatry.findAll();
+		}
+	}
+}

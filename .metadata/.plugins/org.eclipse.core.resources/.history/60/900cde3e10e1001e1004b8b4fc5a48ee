@@ -1,0 +1,29 @@
+package com.userRegistartion.configration;
+
+import java.security.Key;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.annotation.Value;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+
+@ComponentScan
+@Configuration
+public class JwtConfig {
+
+	@Bean
+	public Key secretKey() {
+		String mySecretKeyString = "Aadi_Is_Going_To_Alive_Till_world_gets_Divided_Into_pices";
+		return Keys.hmacShaKeyFor(mySecretKeyString.getBytes());
+	}
+
+	@Value("${jwt.secret}")
+	private String secretKey;
+
+	public Claims decodeToken(String token) {
+		return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();
+	}
+}

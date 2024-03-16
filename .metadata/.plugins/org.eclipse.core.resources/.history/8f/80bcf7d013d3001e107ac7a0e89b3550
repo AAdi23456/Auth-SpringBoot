@@ -1,0 +1,31 @@
+package com.learning.spring.jdbc.spring_JDBC;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.learning.spring.jdbc.spring_DAO.StudentDao;
+import com.learning.spring.jdbc.spring_DAO_Entity.Student;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        ApplicationContext context=new ClassPathXmlApplicationContext("config.xml");
+       StudentDao studentDao = context.getBean("studentdao",StudentDao.class);
+       Student student=new Student();
+       
+//       student.setId(2);
+//       student.setName("mia Khalifa");
+//       student.setCity("Brazzers");
+//       int res=studentDao.update(student);
+    // int  res=studentDao.delete(1);
+       Student student2=(Student) studentDao.getMultipleStudent();
+       System.out.println(student2);
+    }
+   
+}

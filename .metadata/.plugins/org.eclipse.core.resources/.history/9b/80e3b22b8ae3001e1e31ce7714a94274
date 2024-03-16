@@ -1,0 +1,9 @@
+package com.userRegistartion.configration;
+
+public class InterceptorConfig {
+
+	public InterceptorConfig() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

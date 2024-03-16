@@ -1,0 +1,9 @@
+package com.userRegistartion.service;
+
+public class UserRegistartionService {
+
+	public UserRegistartionService() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

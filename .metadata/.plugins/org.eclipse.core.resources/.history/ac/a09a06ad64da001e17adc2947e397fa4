@@ -1,0 +1,13 @@
+package springResttt.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class HomeCintroller {
+
+	  public String registerUser(@RequestBody User user) {
+	        // Here you can implement validation logic for email, password, etc.
+	        // For simplicity, let's just print the user's information.
+	        return "User registered: " + user.getName() + ", " + user.getEmail();
+	    }
+}

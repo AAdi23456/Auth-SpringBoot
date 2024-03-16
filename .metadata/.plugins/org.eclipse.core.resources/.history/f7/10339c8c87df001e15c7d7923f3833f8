@@ -1,0 +1,9 @@
+package com.studentRecord.Service;
+
+public class StudentService {
+
+	public StudentService() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

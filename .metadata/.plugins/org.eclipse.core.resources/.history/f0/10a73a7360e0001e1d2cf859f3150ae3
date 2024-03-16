@@ -1,0 +1,9 @@
+package com.springSecurity.controller;
+
+public class StudentController {
+
+	public StudentController() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.userRegistartion.configration;
+
+public class JwtConfig {
+
+	public JwtConfig() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.userRegistartion.configration;
+
+public class PasswordConfig {
+
+	public PasswordConfig() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

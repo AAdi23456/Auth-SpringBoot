@@ -1,0 +1,9 @@
+package springResttt.controller;
+
+public class HomeCintroller {
+
+	public HomeCintroller() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

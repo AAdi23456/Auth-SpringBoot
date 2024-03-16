@@ -1,0 +1,9 @@
+package com.userRegistartion.configration;
+
+public class PasswordEncoder {
+
+	public PasswordEncoder() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

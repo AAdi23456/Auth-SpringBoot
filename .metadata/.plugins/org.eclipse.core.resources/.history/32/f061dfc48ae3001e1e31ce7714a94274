@@ -1,0 +1,9 @@
+package com.userRegistartion.interceptor;
+
+public class Interceptor {
+
+	public Interceptor() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.userRegistartion.reposatry;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.userRegistartion.entity.User;
+
+public interface UserReposatry extends JpaRepository<User, Integer>{
+
+}

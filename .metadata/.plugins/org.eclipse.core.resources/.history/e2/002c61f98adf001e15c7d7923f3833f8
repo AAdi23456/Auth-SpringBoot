@@ -1,0 +1,9 @@
+package com.studentRecord.Controller;
+
+public class HomeController {
+
+	public HomeController() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

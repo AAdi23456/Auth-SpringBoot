@@ -1,0 +1,38 @@
+package com.studentRecord.Service;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.studentRecord.Entity.Student;
+import com.studentRecord.Reposatry.StudentReosatry;
+
+@Service
+public class StudentService {
+	@Autowired
+	private StudentReosatry studentReosatry;
+
+	public List<Student> getAllStudents(int id) {
+		if (id != 0) {
+			Optional<Student> studentOptional = studentReosatry.findById(id);
+			if (studentOptional.isPresent()) {
+				return Collections.singletonList(studentOptional.get());
+			} else {
+				return Collections.emptyList();
+			}
+		} else {
+			return studentReosatry.findAll();
+		}
+	}
+
+	public Boolean addStudents(List<Student> students) {
+		if (!students.isEmpty()) {
+			studentReosatry.saveAll(students);
+			return true;
+		}
+		return false;
+	}
+}
